@@ -137,26 +137,49 @@ export default function Index(props, { ...rest }) {
                   <br />
                   <h6>on:</h6>
                   <div>
-                    <Link href="https://twitter.com/">
-                      <Button color="white" simple size="lg" justIcon>
-                        <i className="fab fa-twitter" />
-                      </Button>
-                    </Link>
-                    <Link href="https://facebook.com/">
-                      <Button color="white" simple size="lg" justIcon>
-                        <i className="fab fa-facebook-square" />
-                      </Button>
-                    </Link>
-                    <Link href="https://gmail.com/">
-                      <Button color="white" simple size="lg" justIcon>
-                        <i className="fab fa-google-plus-g" />
-                      </Button>
-                    </Link>
-                    <Link href="https://instagram.com/">
-                      <Button color="white" simple size="lg" justIcon>
-                        <i className="fab fa-instagram" />
-                      </Button>
-                    </Link>
+                    <Button
+                      href="https://twitter.com/"
+                      target="_blank"
+                      color="white"
+                      simple
+                      size="lg"
+                      justIcon
+                    >
+                      <i className="fab fa-twitter" />
+                    </Button>
+
+                    <Button
+                      href="https://facebook.com/"
+                      target="_blank"
+                      color="white"
+                      simple
+                      size="lg"
+                      justIcon
+                    >
+                      <i className="fab fa-facebook-square" />
+                    </Button>
+
+                    <Button
+                      target="_blank"
+                      href="https://gmail.com/"
+                      color="white"
+                      simple
+                      size="lg"
+                      justIcon
+                    >
+                      <i className="fab fa-google-plus-g" />
+                    </Button>
+
+                    <Button
+                      href="https://instagram.com/"
+                      color="white"
+                      target="_blank"
+                      simple
+                      size="lg"
+                      justIcon
+                    >
+                      <i className="fab fa-instagram" />
+                    </Button>
                   </div>
                 </GridItem>
               </GridContainer>
