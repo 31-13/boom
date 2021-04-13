@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* NextJS Material Kit PRO v1.1.0 based on Material Kit PRO - v2.0.2 (Bootstrap 4.0.0 Final Edition) and Material Kit PRO React v1.8.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/ct-nextjs-material-kit-pro
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/ct-nextjs-material-kit-pro/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "next/app";
@@ -26,12 +9,22 @@ import PageChange from "components/PageChange/PageChange.js";
 import "assets/scss/nextjs-material-kit-pro.scss?v=1.1.0";
 
 import "assets/css/react-demo.css";
-
+import dynamic from "next/dynamic";
 import "animate.css/animate.min.css";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+
+const TopBar = dynamic(
+  () => {
+    return import("components/Loader/TopBar.js");
+  },
+  { ssr: false }
+);
 
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
   document.body.classList.add("body-page-transition");
+  NProgress.start();
   ReactDOM.render(
     <PageChange path={url} />,
     document.getElementById("page-transition")
@@ -40,6 +33,7 @@ Router.events.on("routeChangeStart", (url) => {
 Router.events.on("routeChangeComplete", () => {
   ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
   document.body.classList.remove("body-page-transition");
+  NProgress.done();
 });
 Router.events.on("routeChangeError", () => {
   ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
@@ -61,6 +55,7 @@ export default function MyApp(props) {
       <Head>
         <title>Boomers Corner</title>
       </Head>
+      <TopBar />
       <Component {...pageProps} />
     </React.Fragment>
   );

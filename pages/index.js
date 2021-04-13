@@ -12,9 +12,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 // core components
-import Info from "components/Typography/Info.js";
-import Danger from "components/Typography/Danger.js";
-import Success from "components/Typography/Success.js";
 
 import cardBlog4 from "assets/img/examples/card-blog4.jpg";
 import Header from "components/Header/Header.js";
@@ -22,20 +19,12 @@ import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import NavPills from "components/NavPills/NavPills.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import Badge from "components/Badge/Badge.js";
-import Muted from "components/Typography/Muted.js";
-import Parallax from "components/Parallax/Parallax.js";
-import Clearfix from "components/Clearfix/Clearfix.js";
+
 import Button from "components/CustomButtons/Button.js";
 import headersStyle from "assets/jss/nextjs-material-kit-pro/pages/sectionsSections/headersStyle.js";
 // react component for creating beautiful carousel
 import Carousel from "react-slick";
-import bg12 from "assets/img/bg12.jpg";
-import office2 from "assets/img/examples/office2.jpg";
+
 import dg1 from "assets/img/dg1.jpg";
 import dg2 from "assets/img/dg2.jpg";
 import dg3 from "assets/img/corner.jpg";
@@ -64,7 +53,7 @@ export default function Index(props, { ...rest }) {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
   };
 
   return (
@@ -188,150 +177,141 @@ export default function Index(props, { ...rest }) {
         </div>
         {/* Carousel 2 END */}
         {/* Carousel 3 START */}
-        <div>
-          <div
-            className={classes.pageHeader}
-            style={{ backgroundImage: `url("${dg3}")` }}
-          >
-            <div className={classes.container}>
-              <div>
-                <div className={classe.blog}>
-                  <div className={classes.container}>
-                    <GridContainer>
-                      <GridItem
-                        xs={12}
-                        sm={10}
-                        md={10}
-                        className={classe.mlAuto + " " + classes.mrAuto}
-                      >
-                        <br />
-                        <h1 className={classes.title}>Latest Blogposts</h1>
+        {/*
+        <div
+          className={classes.pageHeader}
+          style={{ backgroundImage: `url("${dg3}")` }}
+        >
+          <div className={classes.container}>
+            <div className={classes.blog}>
+              <GridContainer>
+                <GridItem
+                  xs={12}
+                  sm={10}
+                  md={10}
+                  className={classe.mlAuto + " " + classes.mrAuto}
+                >
+                  <br />
+                  <h1 className={classes.title}>Latest Blogposts</h1>
 
-                        <Card plain blog className={classe.card}>
-                          <GridContainer>
-                            <GridItem xs={12} sm={5} md={5}>
-                              <CardHeader image plain>
-                                <a
-                                  href="#pablito"
-                                  onClick={(e) => e.preventDefault()}
-                                >
-                                  <img src={cardBlog4} alt="..." />
-                                </a>
-                                <div
-                                  className={classe.coloredShadow}
-                                  style={{
-                                    backgroundImage: `url(${cardBlog4})`,
-                                    opacity: "1",
-                                  }}
-                                />
-                              </CardHeader>
-                            </GridItem>
-                            <GridItem xs={12} sm={7} md={7}>
-                              <Info>
-                                <h6 className={classe.cardCategory}>
-                                  ENTERPRISE
-                                </h6>
-                              </Info>
-                              <h2 className={typo.title}>
-                                <a
-                                  className={typo.title}
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
-                                  Autodesk looks to future of 3D printing with
-                                  Project Escher
-                                </a>
-                              </h2>
-                              <p className={typo.title}>
-                                Like so many organizations these days, Autodesk
-                                is a company in transition. It was until
-                                recently a traditional boxed software company
-                                selling licenses. Today, it’s moving to a
-                                subscription model. Yet its own business model
-                                disruption is only part of the story — and…
-                                <a
-                                  href="#pablo"
-                                  onClick={(e) => e.preventDefault()}
-                                >
-                                  {" "}
-                                  Read More{" "}
-                                </a>
-                              </p>
-                              <p className={classe.author}>
-                                by{" "}
-                                <a href="/" onClick={(e) => e.preventDefault()}>
-                                  <b>Ricardo Menotti</b>
-                                </a>{" "}
-                                , 2 days ago
-                              </p>
-                            </GridItem>
-                          </GridContainer>
-                        </Card>
-                        <Card plain blog className={classe.card}>
-                          <GridContainer>
-                            <GridItem xs={12} sm={7} md={7}>
-                              <Danger>
-                                <h6 className={classe.cardCategory}>
-                                  <TrendingUp />
-                                  TRENDING
-                                </h6>
-                              </Danger>
-                              <h3 className={typo.title}>
-                                <a
-                                  className={typo.title}
-                                  href="/"
-                                  onClick={(e) => e.preventDefault()}
-                                >
-                                  6 insights into the French Fashion landscape
-                                </a>
-                              </h3>
-                              <p className={typo.title}>
-                                Like so many organizations these days, Autodesk
-                                is a company in transition. It was until
-                                recently a traditional boxed software company
-                                selling licenses. Today, it’s moving to a
-                                subscription model. Yet its own business model
-                                disruption is only part of the story — and…
-                                <a href="/" onClick={(e) => e.preventDefault()}>
-                                  {" "}
-                                  Read More{" "}
-                                </a>
-                              </p>
-                              <p className={classe.author}>
-                                by{" "}
-                                <a href="/" onClick={(e) => e.preventDefault()}>
-                                  <b>Julio Iglesias</b>
-                                </a>{" "}
-                                , 2 days ago
-                              </p>
-                            </GridItem>
-                            <GridItem xs={12} sm={5} md={5}>
-                              <CardHeader image plain>
-                                <a
-                                  href="#pablito"
-                                  onClick={(e) => e.preventDefault()}
-                                >
-                                  <img src={office2} alt="..." />
-                                </a>
-                                <div
-                                  className={classes.coloredShadow}
-                                  style={{
-                                    backgroundImage: `url(${office2})`,
-                                    opacity: "1",
-                                  }}
-                                />
-                              </CardHeader>
-                            </GridItem>
-                          </GridContainer>
-                        </Card>
+                  <Card plain blog className={classe.card}>
+                    <GridContainer>
+                      <GridItem xs={12} sm={5} md={5}>
+                        <CardHeader image plain>
+                          <a
+                            href="#pablito"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <img src={cardBlog4} alt="..." />
+                          </a>
+                          <div
+                            className={classe.coloredShadow}
+                            style={{
+                              backgroundImage: `url(${cardBlog4})`,
+                              opacity: "1",
+                            }}
+                          />
+                        </CardHeader>
+                      </GridItem>
+                      <GridItem xs={12} sm={7} md={7}>
+                        <Info>
+                          <h6 className={classe.cardCategory}>ENTERPRISE</h6>
+                        </Info>
+                        <h2 className={typo.title}>
+                          <a
+                            className={typo.title}
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            Autodesk looks to future of 3D printing with Project
+                            Escher
+                          </a>
+                        </h2>
+                        <p className={typo.title}>
+                          Like so many organizations these days, Autodesk is a
+                          company in transition. It was until recently a
+                          traditional boxed software company selling licenses.
+                          Today, it’s moving to a subscription model. Yet its
+                          own business model disruption is only part of the
+                          story — and…
+                          <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                            {" "}
+                            Read More{" "}
+                          </a>
+                        </p>
+                        <p className={classe.author}>
+                          by{" "}
+                          <a href="/" onClick={(e) => e.preventDefault()}>
+                            <b>Ricardo Menotti</b>
+                          </a>{" "}
+                          , 2 days ago
+                        </p>
                       </GridItem>
                     </GridContainer>
-                  </div>
-                </div>
-              </div>
+                  </Card>
+                  <Card plain blog className={classe.card}>
+                    <GridContainer>
+                      <GridItem xs={12} sm={7} md={7}>
+                        <Danger>
+                          <h6 className={classe.cardCategory}>
+                            <TrendingUp />
+                            TRENDING
+                          </h6>
+                        </Danger>
+                        <h3 className={typo.title}>
+                          <a
+                            className={typo.title}
+                            href="/"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            6 insights into the French Fashion landscape
+                          </a>
+                        </h3>
+                        <p className={typo.title}>
+                          Like so many organizations these days, Autodesk is a
+                          company in transition. It was until recently a
+                          traditional boxed software company selling licenses.
+                          Today, it’s moving to a subscription model. Yet its
+                          own business model disruption is only part of the
+                          story — and…
+                          <a href="/" onClick={(e) => e.preventDefault()}>
+                            {" "}
+                            Read More{" "}
+                          </a>
+                        </p>
+                        <p className={classe.author}>
+                          by{" "}
+                          <a href="/" onClick={(e) => e.preventDefault()}>
+                            <b>Julio Iglesias</b>
+                          </a>{" "}
+                          , 2 days ago
+                        </p>
+                      </GridItem>
+                      <GridItem xs={12} sm={5} md={5}>
+                        <CardHeader image plain>
+                          <a
+                            href="#pablito"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <img src={office2} alt="..." />
+                          </a>
+                          <div
+                            className={classes.coloredShadow}
+                            style={{
+                              backgroundImage: `url(${office2})`,
+                              opacity: "1",
+                            }}
+                          />
+                        </CardHeader>
+                      </GridItem>
+                    </GridContainer>
+                  </Card>
+                </GridItem>
+              </GridContainer>
             </div>
           </div>
         </div>
+*/}
         {/* Carousel 3 END */}
       </Carousel>
     </div>
